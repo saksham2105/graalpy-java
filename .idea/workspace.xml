@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e256f5-7b19-4b5a-8e62-83331fa0d44b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/exxeta/projectmatcher/configuration/PythonConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exxeta/projectmatcher/configuration/PythonConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/exxeta/projectmatcher/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exxeta/projectmatcher/controller/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/python/com/exxeta/projectmatcher/service/RecommendationServiceImpl.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/python/com/exxeta/projectmatcher/service/RecommendationServiceImpl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/exxeta/projectmatcher/ProjectmatcherApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/exxeta/projectmatcher/controller/EmployeeControllerIntegrationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/exxeta/projectmatcher/controller/EmployeeControllerUnitTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/exxeta/projectmatcher/service/RecommendationServiceIntegrationTests.java" beforeDir="false" />
-    </list>
+    <list default="true" id="78e256f5-7b19-4b5a-8e62-83331fa0d44b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
