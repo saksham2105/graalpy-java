@@ -7,7 +7,6 @@ RUN yum update -y && yum install wget -y && yum install unzip -y && yum install 
 RUN gu install python
 RUN graalpy -m venv project_matcher_venv
 RUN source project_matcher_venv/bin/activate
-RUN graalpy -m ginstall install numpy
 
 # Install maven
 ARG MAVEN_VERSION=3.8.8

@@ -3,6 +3,7 @@ package com.exxeta.projectmatcher.configuration;
 import com.exxeta.projectmatcher.service.RecommendationService;
 import org.graalvm.polyglot.Context;
 import org.graalvm.polyglot.Source;
+import org.graalvm.polyglot.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ResourceLoader;
@@ -45,5 +46,24 @@ public class PythonConfiguration {
                 .getBindings("python")
                 .getMember("RecommendationServiceImpl")
                 .as(RecommendationService.class);
+    }
+
+    @Bean
+    public Value pythonCodeBean() {
+        Context context = Context
+                .newBuilder("python")
+                .allowAllAccess(true)
+                .option("python.ForceImportSite", "true")
+                .build();
+
+        String pythonScript = "def greet(name):\n" +
+                "    print('I am greeting function')\n" +
+                "    return f'Hello, {name}!'\n" +
+                "\n" +
+                "greet('Saksham')";
+        Value value =context.eval("python", pythonScript);
+        System.out.println("Value is : " + value);
+        return value;
+
     }
 }

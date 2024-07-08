@@ -4,6 +4,7 @@ import com.exxeta.projectmatcher.model.Employee;
 import com.exxeta.projectmatcher.model.Project;
 import com.exxeta.projectmatcher.service.EmployeeService;
 import com.exxeta.projectmatcher.service.RecommendationService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@Slf4j
 public class EmployeeController {
     EmployeeService employeeService;
     RecommendationService recommendationService;
@@ -49,6 +51,9 @@ public class EmployeeController {
 
     @PostMapping("/employee/recommendation")
     List<Employee> getRecommendation(@RequestBody Project project) {
+        log.info("Chala");
+        Iterable<Employee> employeeIterable = employeeService.findAll();
+        log.info("Iterable : " + employeeIterable.iterator().next());
         return recommendationService.recommendEmployees(
                 project,
                 employeeService.findAll()
