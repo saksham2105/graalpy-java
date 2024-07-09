@@ -1,4 +1,4 @@
-FROM ghcr.io/graalvm/graalvm-ce:ol7-java17-22.3.1
+FROM ghcr.io/graalvm/graalvm-ce:ol7-java17-22.3.0
 
 # Setup tools
 RUN yum update -y && yum install wget -y && yum install unzip -y && yum install patch -y

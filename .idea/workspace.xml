@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="78e256f5-7b19-4b5a-8e62-83331fa0d44b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/exxeta/projectmatcher/configuration/PythonConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exxeta/projectmatcher/configuration/PythonConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/exxeta/projectmatcher/configuration/PythonConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/exxeta/projectmatcher/configuration/PythonConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/exxeta/projectmatcher/service/RecommendationServiceImpl.py" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/exxeta/projectmatcher/service/RecommendationServiceImpl.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +54,7 @@
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.PythonConfiguration">
+  <component name="RunManager" selected="Application.ProjectmatcherApplication">
     <configuration name="ProjectmatcherApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.exxeta.projectmatcher.ProjectmatcherApplication" />
       <module name="projectmatcher" />
@@ -107,9 +110,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PythonConfiguration" />
         <item itemvalue="Application.ProjectmatcherApplication" />
         <item itemvalue="Docker.Dockerfile" />
+        <item itemvalue="Application.PythonConfiguration" />
       </list>
     </recent_temporary>
   </component>
