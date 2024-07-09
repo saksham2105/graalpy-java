@@ -1,5 +1,6 @@
 package com.exxeta.projectmatcher.configuration;
 
+import com.exxeta.projectmatcher.evaluator.PythonScriptEvaluator;
 import com.exxeta.projectmatcher.service.RecommendationService;
 import org.graalvm.polyglot.Context;
 import org.graalvm.polyglot.Source;
@@ -10,14 +11,18 @@ import org.springframework.core.io.ResourceLoader;
 
 import javax.script.ScriptException;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 @Configuration
 public class PythonConfiguration {
     ResourceLoader resourceLoader;
+    PythonScriptEvaluator pythonScriptEvaluator;
 
     private static String pythonPath = "classpath:com/exxeta/projectmatcher/service";
 
-    public PythonConfiguration(ResourceLoader resourceLoader) {
+    public PythonConfiguration(ResourceLoader resourceLoader, PythonScriptEvaluator pythonScriptEvaluator) {
+        this.pythonScriptEvaluator = pythonScriptEvaluator;
         this.resourceLoader = resourceLoader;
     }
 
@@ -48,25 +53,6 @@ public class PythonConfiguration {
                 .getMember("RecommendationServiceImpl")
                 .as(RecommendationService.class);
     }
-
-    private static Value eval(String script, Object input) throws ScriptException {
-        Context context = Context
-                .newBuilder("python")
-                .allowAllAccess(true)
-                .option("python.ForceImportSite", "true")
-                .build();
-
-        final Value pyBindings = context.getBindings("python");
-            pyBindings.putMember("name", input);
-            pyBindings.putMember("number", 2);
-            try {
-                Value value = context.eval("python", script);
-                return value;
-            } catch (Exception e) {
-                e.printStackTrace();
-                throw new ScriptException(e);
-            }
-    }
     @Bean
     public Value pythonCodeBean() throws ScriptException {
         // Define the corrected Python script
@@ -81,9 +67,11 @@ public class PythonConfiguration {
                 "result";  // Return the result of the greet function
 
         // Define the input variable
-        Object input = "Saksham Solanki";
+        Map<String, Object> input = new HashMap<>();
+        input.put("name", "Saksham");
+        input.put("number", 101);
         // Evaluate the Python script and retrieve the result
-        Value value = eval(pythonScript, input);
+        Value value = this.pythonScriptEvaluator.eval(pythonScript, input);
         System.out.println("Value is : " + value);
         return value;
     }
